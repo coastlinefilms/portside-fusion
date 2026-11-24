@@ -8,6 +8,7 @@ import { openTableUrl, site } from '@/data/site';
 const links = [
   { href: '#menu', label: 'Winter menu' },
   { href: '#drinks', label: 'Cocktails' },
+  { href: '#catering', label: 'Catering' },
   { href: '#visit', label: 'Patio' },
   { href: '#reserve', label: 'Reservations' },
 ];

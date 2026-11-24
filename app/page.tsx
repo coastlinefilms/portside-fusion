@@ -6,6 +6,22 @@ import ScrollFx from '@/components/ScrollFx';
 import { accompaniments, cocktails, desserts, kitchenRound, menuColumns, type Item } from '@/data/menu';
 import { openTableUrl, site } from '@/data/site';
 import LocationMap from '@/components/LocationMap';
+import CateringForm from '@/components/CateringForm';
+
+const cateringTypes = [
+  { title: 'Corporate events', form: 'Corporate event', desc: 'Client dinners, team lunches and company celebrations' },
+  { title: 'Birthday parties', form: 'Birthday party', desc: 'Milestone birthdays and family celebrations' },
+  { title: 'Weddings', form: 'Wedding', desc: 'Rehearsal dinners and receptions' },
+  { title: 'Holiday events', form: 'Holiday event', desc: 'Office holiday parties and seasonal gatherings' },
+];
+
+function Arrow() {
+  return (
+    <svg className="cater-arrow" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+      <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` }) as React.CSSProperties;
 
@@ -45,6 +61,7 @@ export default function Home() {
               <BookingForm variant="hero" />
             </div>
             <div className="hero-foot enter" style={d(400)}>
+              <a className="btn btn-line hero-cater" href="#catering">Book event catering</a>
               <a className="ul hero-link" href="#menu">View the winter menu</a>
             </div>
           </div>
@@ -87,7 +104,41 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 3. Welcome / the place */}
+        {/* 3. Catering */}
+        <section id="catering" className="sec navy">
+          <div className="wrap cater">
+            <div className="cater-intro">
+              <h2 className="serif h2" data-reveal="up">Catering for your next event</h2>
+              <span className="rule rule-brass" data-reveal="fade" style={d(150)} />
+              <p className="lead-dark cater-lead" data-reveal="up" style={d(150)}>
+                From the boardroom to the reception, bring Portside Fusion to your guests. Tell us the date, the
+                headcount and the occasion, and we will come back to you with a menu and a quote.
+              </p>
+              <ul className="cater-types">
+                {cateringTypes.map((c, i) => (
+                  <li key={c.title} data-reveal="up" style={d(200 + i * 70)}>
+                    <a href="#cater-form" data-catering-type={c.form} aria-label={`Plan catering for ${c.title.toLowerCase()}`}>
+                      <span className="cater-type">{c.title}</span>
+                      <span className="cater-desc">{c.desc}</span>
+                      <Arrow />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="ph cater-ph-a" data-reveal="img" style={d(100)}>
+              <Image src="/images/catering-group.jpg" quality={80} alt="A group sharing a seafood tower around a long table on the Portside Fusion patio" fill sizes="(max-width: 1100px) 100vw, 60vw" style={{ objectPosition: '50% 60%' }} />
+            </div>
+            <div className="ph cater-ph-b" data-reveal="img">
+              <Image src="/images/catering-service.jpg" quality={80} alt="A Portside Fusion server bringing a plate out to guests on the patio" fill sizes="(max-width: 860px) 0px, 40vw" style={{ objectPosition: '50% 30%' }} />
+            </div>
+            <div id="cater-form" className="cater-form" data-reveal="up">
+              <CateringForm />
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Welcome / the place */}
         <section className="sec sand">
           <div className="wrap place">
             <div className="place-text">
@@ -112,7 +163,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. Winter menu */}
+        {/* 5. Winter menu */}
         <section id="menu" className="sec paper">
           <div className="wrap">
             <div className="menu-head">
@@ -182,7 +233,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 5. Cocktails + desserts */}
+        {/* 6. Cocktails + desserts */}
         <section id="drinks" className="sec navy">
           <div className="wrap drinks">
             <div>
@@ -224,7 +275,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 6. Reservations */}
+        {/* 7. Reservations */}
         <section id="reserve" className="reserve">
           <LocationMap />
           <div className="reserve-copy">
