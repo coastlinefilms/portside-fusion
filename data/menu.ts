@@ -105,7 +105,7 @@ export const cocktails: Item[] = [
   { name: 'Tiramisu Espresso Martini', price: '24', desc: 'Espresso, tiramisu syrup, aged rum, chocolate milk, cocoa powder, lady finger' },
   { name: 'Muskoka Royale', price: '23', desc: 'Empress gin, elderflower liqueur, orange bitters, prosecco, soda, grapefruit twist' },
   { name: 'Floradora', price: '22', desc: 'Vodka, raspberry syrup, fresh lime juice, ginger beer, soda' },
-  { name: 'Spicy Margarita', price: '21', desc: 'Blanco tequila, jalapeño, triple sec, fresh lime juice' },
+  { name: 'Spicy Margarita', price: '21', desc: 'Blanco tequila, freshly squeezed lime juice, orange liqueur, agave syrup, muddled jalapeño slices, salt or tajín rim' },
 ];
 
 export const desserts: Item[] = [
