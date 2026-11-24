@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from 'react';
 import { openTableUrl, site } from '@/data/site';
+import OpenStatus from '@/components/OpenStatus';
 
 const times: { value: string; label: string }[] = [];
 for (let h = 12; h <= 21; h++) {
@@ -37,10 +38,7 @@ export default function BookingForm({ variant }: { variant: 'hero' | 'full' }) {
     return (
       <form className="book" onSubmit={submit} aria-label="Find a table">
         <div className="book-fact">
-          <span className="book-open">
-            <span className="dot" aria-hidden="true" />
-            Now open
-          </span>
+          <OpenStatus />
           <span className="book-hours">{site.hours}</span>
         </div>
         <label className="sel" htmlFor={`${id}-d`}>

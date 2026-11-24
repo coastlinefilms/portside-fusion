@@ -142,9 +142,11 @@ section[id] { scroll-margin-top: 80px; }
 /* booking bar (hero) */
 .book { display: grid; grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr)) auto; margin-top: 44px; background: var(--navy); border-top: 2px solid var(--brass); }
 .book-fact { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 16px 24px; border-right: 1px solid rgba(246, 243, 236, 0.12); }
-.book-open { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brass); flex: 0 0 auto; box-shadow: 0 0 0 0 rgba(199, 154, 87, 0.6); animation: pulse 2.4s ease-out infinite; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(199, 154, 87, 0.55); } 70% { box-shadow: 0 0 0 10px rgba(199, 154, 87, 0); } 100% { box-shadow: 0 0 0 0 rgba(199, 154, 87, 0); } }
+.book-open { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; font-weight: 500; line-height: 1.4; transition: opacity .4s ease; }
+.book-open.is-pending { visibility: hidden; opacity: 0; }
+.dot { --pulse: 52, 199, 123; width: 8px; height: 8px; margin-top: calc(0.7em - 4px); border-radius: 50%; background: rgb(var(--pulse)); flex: 0 0 auto; box-shadow: 0 0 0 0 rgba(var(--pulse), 0.6); animation: pulse 2.4s ease-out infinite; }
+.book-open.is-closed .dot { --pulse: 240, 82, 82; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(var(--pulse), 0.55); } 70% { box-shadow: 0 0 0 10px rgba(var(--pulse), 0); } 100% { box-shadow: 0 0 0 0 rgba(var(--pulse), 0); } }
 .book-hours { font-size: 14px; color: var(--muted-dark); }
 .sel { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 14px 22px; border-right: 1px solid rgba(246, 243, 236, 0.12); font-size: 14px; font-weight: 400; color: var(--muted-dark); cursor: pointer; }
 .sel select, .sel input { appearance: none; -webkit-appearance: none; background: transparent; border: 0; color: var(--paper); font: 500 16px var(--sans); padding: 2px 0; min-height: 32px; width: 100%; cursor: pointer; color-scheme: dark; }
@@ -214,7 +216,28 @@ section[id] { scroll-margin-top: 80px; }
 
 /* ---------- reserve ---------- */
 .reserve { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); background: var(--navy-deep); color: var(--paper); }
-.rph { min-height: 760px; background: var(--navy-card); }
+.rmap { position: relative; min-height: 760px; overflow: hidden; background: #1b2742; }
+.rmap__canvas { position: absolute; inset: 0; }
+.rmap__fallback { position: absolute; inset: 0; background: radial-gradient(circle at 42% 46%, rgba(199, 154, 87, .18), transparent 40%), #1b2742; }
+.rmap__card { position: absolute; left: 24px; bottom: 24px; z-index: 2; max-width: calc(100% - 48px); padding: 20px 22px; background: var(--navy-deep); border: 1px solid rgba(246, 243, 236, .12); box-shadow: 0 18px 40px -18px rgba(0, 0, 0, .6); }
+.rmap__name { font-size: 18px; font-weight: 500; letter-spacing: -0.015em; color: var(--paper); }
+.rmap__addr { margin-top: 4px; font-size: 15px; color: var(--muted-dark); }
+.rmap__card .btn { margin-top: 16px; }
+.map-pin { display: flex; align-items: center; gap: 10px; pointer-events: none; }
+.map-pin__badge { position: relative; width: 52px; height: 52px; border-radius: 50%; background: var(--navy-deep); border: 2px solid var(--brass); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0, 0, 0, .45); }
+.map-pin__badge::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; box-shadow: 0 0 0 0 rgba(199, 154, 87, .5); animation: pinpulse 2.6s ease-out infinite; }
+.map-pin__badge img { width: 30px; height: 30px; display: block; }
+.map-pin__label { padding: 8px 12px; background: var(--brass); color: var(--navy); font-size: 14px; font-weight: 500; line-height: 1; white-space: nowrap; box-shadow: 0 8px 20px rgba(0, 0, 0, .35); }
+@keyframes pinpulse { 0% { box-shadow: 0 0 0 0 rgba(199, 154, 87, .5); } 70% { box-shadow: 0 0 0 16px rgba(199, 154, 87, 0); } 100% { box-shadow: 0 0 0 0 rgba(199, 154, 87, 0); } }
+.rmap .maplibregl-ctrl-group { background: var(--navy-deep); border-radius: 0; box-shadow: none; border: 1px solid rgba(246, 243, 236, .16); }
+.rmap .maplibregl-ctrl-group button { width: 36px; height: 36px; }
+.rmap .maplibregl-ctrl-group button + button { border-top: 1px solid rgba(246, 243, 236, .16); }
+.rmap .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1) brightness(1.6); }
+.rmap .maplibregl-ctrl-top-right { top: 12px; right: 12px; }
+.rmap .maplibregl-ctrl-attrib { background: rgba(15, 24, 43, .72); color: var(--muted-dark); font-size: 12px; }
+.rmap .maplibregl-ctrl-attrib a { color: var(--muted-dark); }
+.rmap .maplibregl-ctrl-attrib-button { filter: invert(1); }
+.rmap .maplibregl-cooperative-gesture-screen { background: rgba(15, 24, 43, .72); font-family: var(--sans); font-size: 18px; }
 .reserve-copy { display: flex; flex-direction: column; justify-content: center; padding: 96px calc(max(0px, (100vw - 1312px) / 2) + var(--pad)) 96px 72px; }
 .reserve .h2 { color: var(--paper); }
 .call { margin-top: 28px; font-size: 16px; }
@@ -266,7 +289,7 @@ section[id] { scroll-margin-top: 80px; }
   .acc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .drinks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; }
   .dph { grid-column: 1 / -1; order: -1; height: 460px; position: relative; top: 0; }
-  .rph { min-height: 640px; }
+  .rmap { min-height: 640px; }
   .foot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -274,7 +297,8 @@ section[id] { scroll-margin-top: 80px; }
   .visit-head { grid-template-columns: minmax(0, 1fr); }
   .visit-pano { margin-top: 48px; aspect-ratio: 16 / 9; }
   .reserve { grid-template-columns: minmax(0, 1fr); }
-  .rph { min-height: 0; height: 420px; }
+  .rmap { min-height: 0; height: 460px; }
+  .rmap__card { left: 16px; bottom: 16px; padding: 16px 18px; }
   .reserve-copy { padding: 72px var(--pad); }
 }
 
@@ -353,6 +377,7 @@ section[id] { scroll-margin-top: 80px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .map-pin__badge::after { animation: none; }
   html { scroll-behavior: auto; }
   .pf-nav__inner, .pf-nav__logo img, .pf-nav__links, .pf-nav__cta, .pf-nav__t, .pf-nav__arrow { transition: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

@@ -5,6 +5,7 @@ import BookingForm from '@/components/BookingForm';
 import ScrollFx from '@/components/ScrollFx';
 import { accompaniments, cocktails, desserts, kitchenRound, menuColumns, type Item } from '@/data/menu';
 import { openTableUrl, site } from '@/data/site';
+import LocationMap from '@/components/LocationMap';
 
 const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` }) as React.CSSProperties;
 
@@ -225,9 +226,7 @@ export default function Home() {
 
         {/* 6. Reservations */}
         <section id="reserve" className="reserve">
-          <div className="ph rph" data-reveal="img">
-            <Image src="/images/building.jpg" alt="The Portside Fusion restaurant building and sign in Port Carling" fill sizes="(max-width: 760px) 100vw, 50vw" style={{ objectPosition: '6% 50%' }} />
-          </div>
+          <LocationMap />
           <div className="reserve-copy">
             <h2 className="serif h2" data-reveal="up">Make a reservation</h2>
             <span className="rule rule-brass" data-reveal="fade" style={d(150)} />
