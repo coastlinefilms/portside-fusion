@@ -235,7 +235,7 @@ section[id] { scroll-margin-top: 80px; }
 .rmap .maplibregl-ctrl-group button + button { border-top: 1px solid rgba(246, 243, 236, .16); }
 .rmap .maplibregl-ctrl-group button .maplibregl-ctrl-icon { filter: invert(1) brightness(1.6); }
 .rmap .maplibregl-ctrl-top-right { top: 12px; right: 12px; }
-.rmap .maplibregl-ctrl-attrib { background: rgba(15, 24, 43, .72); color: var(--muted-dark); font-size: 12px; }
+.rmap .maplibregl-ctrl-attrib, .rmap .maplibregl-ctrl-bottom-right > .maplibregl-ctrl-attrib.maplibregl-compact, .rmap .maplibregl-ctrl-attrib.maplibregl-compact-show { background: rgba(15, 24, 43, .78); color: var(--muted-dark); font-size: 12px; }
 .rmap .maplibregl-ctrl-attrib a { color: var(--muted-dark); }
 .rmap .maplibregl-ctrl-attrib-button { filter: invert(1); }
 .rmap .maplibregl-cooperative-gesture-screen { background: rgba(15, 24, 43, .72); font-family: var(--sans); font-size: 18px; }
