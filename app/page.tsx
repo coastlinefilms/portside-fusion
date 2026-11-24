@@ -61,7 +61,7 @@ export default function Home() {
               <p className="lead visit-lead" data-reveal="up" style={d(150)}>Our exquisite outdoor patio sits up in the trees, open to the Muskoka sky. When the weather turns, take a table inside for the same menu and the same service.</p>
             </div>
             <div className="ph visit-pano" data-reveal="img">
-              <Image src="/images/patio-panorama.jpg" quality={80} alt="The Portside Fusion patio, raised up in the trees beside the restaurant in Port Carling" fill sizes="(max-width: 1312px) 100vw, 1184px" style={{ objectPosition: '50% 55%' }} />
+              <Image src="/images/patio-panorama-v2.jpg" quality={80} alt="The Portside Fusion patio, raised up in the trees beside the restaurant in Port Carling" fill sizes="(max-width: 1312px) 100vw, 1184px" style={{ objectPosition: '50% 55%' }} />
             </div>
             <div className="facts facts-row">
               <div data-reveal="up" style={d(0)}>
