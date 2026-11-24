@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import '@fontsource-variable/playfair-display';
-import '@fontsource-variable/playfair-display/wght-italic.css';
-import '@fontsource-variable/montserrat';
-import '@fontsource-variable/montserrat/wght-italic.css';
+import '@fontsource-variable/schibsted-grotesk';
 import './globals.css';
 import { site } from '@/data/site';
 

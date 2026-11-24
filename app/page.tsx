@@ -35,7 +35,7 @@ export default function Home() {
           <HeroVideo />
           <div className="hero-shade" aria-hidden="true" />
           <div className="wrap hero-inner" data-hero-copy>
-            <h1 className="serif h1 enter">Casual fine dining in Port Carling</h1>
+            <h1 className="serif h1 enter">Casual fine dining<br />in Port Carling</h1>
             <p className="hero-sub enter" style={d(120)}>
               Our goal at Portside Fusion is to introduce the highest standard of food and service, alongside an
               appealing comfortable atmosphere in the Muskoka region.
@@ -67,7 +67,7 @@ export default function Home() {
                 <h3 className="lbl">Opening hours</h3>
                 <p className="muted">Our current operating hours</p>
                 <p className="strong">Tuesday to Sunday</p>
-                <p className="serif italic big">Noon - 10pm</p>
+                <p className="big">Noon - 10pm</p>
               </div>
               <div data-reveal="up" style={d(100)}>
                 <h3 className="lbl">Our address</h3>
@@ -95,7 +95,7 @@ export default function Home() {
               <p className="lead" data-reveal="up" style={d(150)}>
                 Our team strives to bring together the freshest local ingredients to produce a variety of culturally rich dishes.
               </p>
-              <p className="serif italic quote" data-reveal="up" style={d(250)}>
+              <p className="serif quote" data-reveal="up" style={d(250)}>
                 The Muskoka lakes are the crown jewel of Ontario cottage country, and as such we seek to bring the food we feel it deserves.
               </p>
               <div data-reveal="up" style={d(350)}>
@@ -216,7 +216,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="round" data-reveal="up" style={d(300)}>
-                <span className="serif italic">{kitchenRound.name}</span>
+                <span className="serif">{kitchenRound.name}</span>
                 <span className="price">{kitchenRound.price}</span>
               </div>
             </div>
