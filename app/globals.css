@@ -150,10 +150,10 @@ section[id] { scroll-margin-top: 80px; }
 .fld select:hover, .fld input:hover { border-color: rgba(246, 243, 236, 0.55); }
 
 /* ---------- visit ---------- */
-.visit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; align-items: stretch; }
-.visit-img { min-height: 720px; }
-.visit-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 56px; }
-.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
+.visit-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 40px 80px; align-items: end; }
+.visit-lead { margin-top: 0; max-width: 460px; }
+.visit-pano { margin-top: 64px; aspect-ratio: 5 / 2; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 48px; margin-top: 64px; }
 .facts .lbl + p { margin-top: 16px; }
 .facts .muted { font-size: 15px; }
 .facts .strong { margin-top: 6px; font-size: 19px; font-weight: 600; line-height: 1.5; }
@@ -246,9 +246,8 @@ section[id] { scroll-margin-top: 80px; }
   .book-fact { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid rgba(246, 243, 236, 0.12); }
   .book-btn { grid-column: 1 / -1; min-height: 60px; }
   .sel:nth-of-type(3) { border-right: 0; }
-  .visit { gap: 48px; }
-  .visit-img { min-height: 560px; }
-  .facts { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .visit-head { gap: 32px 48px; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; }
   .place-text { grid-column: 1 / -1; margin-bottom: 24px; }
   .place-a { grid-column: 1 / span 6; height: 520px; }
   .place-b { grid-column: 7 / span 6; height: 520px; }
@@ -264,9 +263,8 @@ section[id] { scroll-margin-top: 80px; }
 @media (max-width: 860px) {
   .nl { display: none; }
   .menu-btn { display: inline-flex; }
-  .visit { grid-template-columns: minmax(0, 1fr); }
-  .visit-img { min-height: 0; height: 420px; }
-  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .visit-head { grid-template-columns: minmax(0, 1fr); }
+  .visit-pano { margin-top: 48px; aspect-ratio: 16 / 9; }
   .reserve { grid-template-columns: minmax(0, 1fr); }
   .rph { min-height: 0; height: 420px; }
   .reserve-copy { padding: 72px var(--pad); }
@@ -284,7 +282,8 @@ section[id] { scroll-margin-top: 80px; }
   .book-fact { padding: 14px 18px; }
   .book-btn { min-height: 56px; }
   .video-toggle { right: var(--pad); bottom: 32px; }
-  .facts { grid-template-columns: minmax(0, 1fr); }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 48px; }
+  .visit-pano { aspect-ratio: 4 / 3; }
   .place-a, .place-b { grid-column: 1 / -1; height: 420px; }
   .place-text .quote { font-size: 25px; }
   .strip { grid-template-columns: minmax(0, 1fr); }

@@ -51,36 +51,36 @@ export default function Home() {
 
         {/* 2. Visit */}
         <section id="visit" className="sec paper">
-          <div className="wrap visit">
-            <div className="ph visit-img" data-reveal="img">
-              <Image src="/images/drone.jpg" alt="Aerial view of Portside Fusion and its patio beside the river in Port Carling" fill sizes="(max-width: 760px) 100vw, 50vw" />
-            </div>
-            <div className="visit-copy">
+          <div className="wrap">
+            <div className="visit-head">
               <div>
-                <h2 className="serif moment" data-reveal="up">Joseph St,<br />Port Carling</h2>
+                <h2 className="serif moment" data-reveal="up">On the patio,<br />or inside</h2>
                 <span className="rule" data-reveal="fade" style={d(150)} />
-                <p className="lead" data-reveal="up" style={d(200)}>Indoor + outdoor seating in the Muskoka region.</p>
               </div>
-              <div className="facts">
-                <div data-reveal="up" style={d(0)}>
-                  <h3 className="lbl">Opening hours</h3>
-                  <p className="muted">Our current operating hours</p>
-                  <p className="strong">Tuesday to Sunday</p>
-                  <p className="serif italic big">Noon - 10pm</p>
-                </div>
-                <div data-reveal="up" style={d(100)}>
-                  <h3 className="lbl">Our address</h3>
-                  <p className="strong">{site.street}<br />{site.locality}, {site.region} {site.postal}</p>
-                  <a className="ul cap-link" href={site.directions} target="_blank" rel="noopener">Get directions</a>
-                </div>
-                <div data-reveal="up" style={d(200)}>
-                  <h3 className="lbl">Call</h3>
-                  <p className="strong"><a className="ul" href={site.phoneHref}>{site.phoneDisplay}</a></p>
-                </div>
-                <div data-reveal="up" style={d(300)}>
-                  <h3 className="lbl">Email</h3>
-                  <p className="strong-sm"><a className="ul" href={site.emailHref}>{site.email}</a></p>
-                </div>
+              <p className="lead visit-lead" data-reveal="up" style={d(150)}>Our exquisite outdoor patio sits up in the trees, open to the Muskoka sky. When the weather turns, take a table inside for the same menu and the same service.</p>
+            </div>
+            <div className="ph visit-pano" data-reveal="img">
+              <Image src="/images/patio-panorama.jpg" alt="The Portside Fusion patio, raised up in the trees beside the restaurant in Port Carling" fill sizes="(max-width: 1312px) 100vw, 1184px" style={{ objectPosition: '50% 55%' }} />
+            </div>
+            <div className="facts facts-row">
+              <div data-reveal="up" style={d(0)}>
+                <h3 className="lbl">Opening hours</h3>
+                <p className="muted">Our current operating hours</p>
+                <p className="strong">Tuesday to Sunday</p>
+                <p className="serif italic big">Noon - 10pm</p>
+              </div>
+              <div data-reveal="up" style={d(100)}>
+                <h3 className="lbl">Our address</h3>
+                <p className="strong">{site.street}<br />{site.locality}, {site.region} {site.postal}</p>
+                <a className="ul cap-link" href={site.directions} target="_blank" rel="noopener">Get directions</a>
+              </div>
+              <div data-reveal="up" style={d(200)}>
+                <h3 className="lbl">Call</h3>
+                <p className="strong"><a className="ul" href={site.phoneHref}>{site.phoneDisplay}</a></p>
+              </div>
+              <div data-reveal="up" style={d(300)}>
+                <h3 className="lbl">Email</h3>
+                <p className="strong-sm"><a className="ul" href={site.emailHref}>{site.email}</a></p>
               </div>
             </div>
           </div>
