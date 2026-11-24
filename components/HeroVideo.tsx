@@ -34,9 +34,9 @@ export default function HeroVideo() {
   return (
     <>
       <div className="hero-media" data-hero-media aria-hidden="true">
-        <video ref={ref} autoPlay muted loop playsInline preload="auto" poster="/video/portside-loop-poster.jpg">
-          <source src="/video/portside-loop-720.mp4" type="video/mp4" media="(max-width: 760px)" />
-          <source src="/video/portside-loop-1080.mp4" type="video/mp4" />
+        <video ref={ref} autoPlay muted loop playsInline preload="auto" poster="/video/portside-loop-v2-poster.jpg">
+          <source src="/video/portside-loop-v2-720.mp4" type="video/mp4" media="(max-width: 760px)" />
+          <source src="/video/portside-loop-v2-1080.mp4" type="video/mp4" />
         </video>
       </div>
       <button type="button" className="video-toggle" onClick={toggle} aria-label={paused ? 'Play background video' : 'Pause background video'}>
