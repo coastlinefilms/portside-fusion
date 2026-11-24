@@ -61,7 +61,7 @@ export default function Home() {
               <p className="lead visit-lead" data-reveal="up" style={d(150)}>Our exquisite outdoor patio sits up in the trees, open to the Muskoka sky. When the weather turns, take a table inside for the same menu and the same service.</p>
             </div>
             <div className="ph visit-pano" data-reveal="img">
-              <Image src="/images/patio-panorama.jpg" alt="The Portside Fusion patio, raised up in the trees beside the restaurant in Port Carling" fill sizes="(max-width: 1312px) 100vw, 1184px" style={{ objectPosition: '50% 55%' }} />
+              <Image src="/images/patio-panorama.jpg" quality={80} alt="The Portside Fusion patio, raised up in the trees beside the restaurant in Port Carling" fill sizes="(max-width: 1312px) 100vw, 1184px" style={{ objectPosition: '50% 55%' }} />
             </div>
             <div className="facts facts-row">
               <div data-reveal="up" style={d(0)}>
@@ -104,10 +104,10 @@ export default function Home() {
               </div>
             </div>
             <div className="ph place-a" data-reveal="img" style={d(100)}>
-              <Image src="/images/guest-laugh.jpg" alt="A guest enjoying dinner on the patio at dusk" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 25vw" style={{ objectPosition: '50% 30%' }} />
+              <Image src="/images/welcome-server.jpg" quality={80} alt="A Portside Fusion server smiling as she brings a plate to the table" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 25vw" style={{ objectPosition: '70% 25%' }} />
             </div>
             <div className="ph place-b" data-reveal="img" style={d(250)}>
-              <Image src="/images/table.jpg" alt="Friends sharing dinner on the covered patio" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 25vw" style={{ objectPosition: '28% 50%' }} />
+              <Image src="/images/welcome-guest.jpg" quality={80} alt="A guest laughing at the table on the patio with the seafood tower" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 25vw" style={{ objectPosition: '50% 35%' }} />
             </div>
           </div>
         </section>
@@ -128,13 +128,13 @@ export default function Home() {
 
             <div className="strip">
               <div className="ph" data-reveal="img" style={d(0)}>
-                <Image src="/images/seafood-tower.jpg" alt="A server bringing a chilled seafood tower to the table" fill sizes="(max-width: 760px) 100vw, 33vw" style={{ objectPosition: '50% 40%' }} />
+                <Image src="/images/strip-tower.jpg" quality={80} alt="The chilled seafood tower with oysters, crab, lobster and shrimp" fill sizes="(max-width: 760px) 100vw, 33vw" />
               </div>
               <div className="ph" data-reveal="img" style={d(120)}>
-                <Image src="/images/linguine.jpg" alt="Seafood linguine with mussels, shrimp and scallops" fill sizes="(max-width: 760px) 100vw, 33vw" />
+                <Image src="/images/strip-oysters.jpg" quality={80} alt="PEI oysters on ice with lemon, vinaigrette and horseradish" fill sizes="(max-width: 760px) 100vw, 33vw" />
               </div>
               <div className="ph" data-reveal="img" style={d(240)}>
-                <Image src="/images/steak.jpg" alt="A plated steak with pan sauce and potatoes" fill sizes="(max-width: 760px) 100vw, 33vw" />
+                <Image src="/images/strip-scallops.jpg" quality={80} alt="Pan-seared scallops with roe and microgreens" fill sizes="(max-width: 760px) 100vw, 33vw" />
               </div>
             </div>
 
@@ -202,7 +202,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="ph dph" data-reveal="img" style={d(150)}>
-              <Image src="/images/oysters-champagne.jpg" alt="Oysters on ice with a bottle of champagne on the patio overlooking the trees" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 100vw, 30vw" style={{ objectPosition: '50% 60%' }} />
+              <Image src="/images/drinks-pour.jpg" quality={80} alt="A server pouring a glass of white wine on the patio" fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 100vw, 30vw" style={{ objectPosition: '50% 40%' }} />
             </div>
             <div>
               <h2 className="serif h2" data-reveal="up">Desserts</h2>
